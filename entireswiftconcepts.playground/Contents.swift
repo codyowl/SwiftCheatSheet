@@ -187,10 +187,60 @@ var ternary_second_variable = 6
 
 print (ternary_variable > ternary_second_variable ? "nope it is not greater" : "yup it is greater") // if the condition returns true then it will print the second value else third value
 
-// =================================================================================================     
+// =================================================================================================
 
+// loops
 
+// for loop
 
+var for_loop_variable = 1..5
+
+for value in for_loop_variable {
+    print ("This will print till that time")
+}     
+
+// while loop:
+
+var while_loop_variable = 1
+
+while while_loop_variable <=20 {
+    print (while_loop_variable)
+    while_loop_variable += 1
+}
+
+// repeat loops - which is more over similar to while except the condition will be exectued atleast once
+
+var repeat_loop_variable = 1
+
+repeat {
+    print (repeat_loop_variable)
+    repeat_loop_variable += 1
+} while repeat_loop_variable <=20 // so since we have while over here the cond will be executed once
+
+// Exiting a loop
+// keyword : break
+
+for value in for_loop_variable {
+    print ("This will printed")
+
+    if value == 2 {
+        break
+    }
+}
+
+// Exiting multiple loops
+// keyword : outerLoop    
+outerLoop : for i in 1..10 {
+    for j in 10..20 {
+        sum_value = i + j
+
+        if sum_value == 24 {
+            break outerloop
+        }
+    }
+}
+
+//==================================================================================================
 
 
 
