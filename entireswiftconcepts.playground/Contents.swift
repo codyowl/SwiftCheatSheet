@@ -242,7 +242,92 @@ outerLoop : for i in 1..10 {
 
 //==================================================================================================
 
+// Functions
 
+// keyword : func
 
+func my_first_function(){
+    print ("text form my first function")
+}
 
+my_first_function() // calling the function
 
+// passing arguments
+
+func my_function_with_argument(name: String){
+    print ("The name is : \(name)")
+}
+
+my_function_with_argument(name: "linux")
+
+// returning value
+
+func my_function_with_return(number : Int) {
+    return number + number
+}
+
+my_function_with_return(number:5)
+
+// giving labels to our functin parameters
+
+// we can give labels to our function parameters
+
+// syntax func <function_name> (parameter label : datatype)
+
+func my_function_with_parameter_label(name personname:String){
+    print ("The person name is \(personname)") // here I can use the label to reger the data
+}
+
+my_function_with_parameter_label(name : "somename") // just giving the parameter while calling it
+
+// passing default parameter
+
+func my_function_with_default_parameter (name : String ="somerandomname"){
+    print ("The name parameter value is \(name)")
+}
+
+my_function_with_default_parameter()
+
+// variadic function
+
+// you can pass n number of arguments that is variadic function 
+
+// we have to use "..." for this
+
+func my_variadic_function(number :Int...){
+    print (number)
+}
+
+my_variadic_function(number : 1,2,3,4,5)
+
+// throwing functions
+// we can write throwing functin which will throw something based on the condition
+// keywords : throws, throw
+// syntax : func <function_name>(parameter : datatype) throws -> datatype
+
+var throw_variable = "entered number is correct"
+
+func my_function_with_throw(number : Int) throws -> Int {
+    if number == 5 {
+        throw throw_variable
+    }
+
+    return "nope correct value didnt got"
+}
+
+my_function_with_throw(number: 2)
+
+// inout 
+// inout will change the value of passed parameter
+// keywords :inout operator : &
+var my_inout_variable = 5
+
+func my_inout_function(number : inout Int){
+    return number + 1
+}
+
+my_inout_function(&my_inout_variable)
+
+print ("The Changed value is \(my_inout_variable)")
+
+// ==================================================================================================
