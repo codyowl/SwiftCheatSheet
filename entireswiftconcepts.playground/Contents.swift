@@ -170,7 +170,24 @@ print ("Okay rasam belongs to the category : \(rasam)")
     
 // ====================================================================================================
 
-    
+// operators
+// as most of em are similar covered these two operators apart from rest of it.
+// ternary and range operator
+
+// range operator is for taking length range and ternary operators is for conditions
+// range operator => ".."
+var range_variable = 1..5 // this will take range from 1 to 5
+
+print (range_variable)
+
+// ternary operator = "?"
+
+var ternary_variable = 5
+var ternary_second_variable = 6
+
+print (ternary_variable > ternary_second_variable ? "nope it is not greater" : "yup it is greater") // if the condition returns true then it will print the second value else third value
+
+// =================================================================================================     
 
 
 
