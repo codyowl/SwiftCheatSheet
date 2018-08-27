@@ -331,3 +331,67 @@ my_inout_function(&my_inout_variable)
 print ("The Changed value is \(my_inout_variable)")
 
 // ==================================================================================================
+
+// closures
+
+// creating function in a way with string/integer like data type 
+
+let my_first_closure = {
+    print ("These are text from the first closure")
+}
+
+my_first_closure() // calling it like a function call.
+
+// passing parameters
+// keywords : in
+
+let my_closure_with_parameter{ (number:Int) in 
+    print ("Enetered value is \(number)")
+    }
+
+// using return in a closure similar to function
+
+let my_closure_with_return { (name: String) in
+    return name 
+}    
+
+// passing closures as parameters to functions
+// keywords : () -> Void
+// syntax : func <functionname>(parameter : () -> Void)
+
+let my_closure_as_parameter {
+    print ("Text from my closure")
+}
+
+func my_function_with_closure_as_parameter(name:() -> Void){
+    print ("Text from my function")
+    name () // calling the closure
+
+}
+
+my_function_with_closure_as_parameter(name: my_closure_as_parameter) // function calling
+
+// function call using trailing closure syntax
+
+// when a function contains closure as its parameter then we can call it using trailing closure syntax
+
+let my_trailing_closure_variable {
+    print ("Text from my closure")
+}
+
+func my_function_with_trailing_closure_syntax(name : () -> Void){
+    print ("text from my function")
+    name()
+}
+
+// function call with trailing closure 
+my_function_with_trailing_closure_syntax() {
+    print ("my trailing function")
+}
+
+// alternate way with trailing closure
+my_function_with_trailing_closure_syntax {
+    print ("This will also work")
+}
+
+//======================================================================================================
