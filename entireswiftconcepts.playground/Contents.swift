@@ -530,7 +530,64 @@ lazyStructInstance.firststruct // since we have added lazy to this property it w
 
 //====================================================================================================
 
+// Class
 
+// Most of the sytax for class are more over similar to struct
+
+class FirstClass{
+    func FirstFunction(){
+        print ("Text from first function")
+    }
+}
+
+var FirstClassInstance = FirstClass()
+
+FirstClassInstance.FirstFunction()
+
+// properties inside a class should have an initializers
+
+class FirstClassWithProperty {
+    var FirstProperty : String
+
+    init(FirstPropery:String){
+        self.FirstProperty = FirstProperty
+    }
+}
+
+var InstanceClassProperty = FirstClassWithProperty(FirstProperty:"Something")
+
+print (InstanceClassProperty.FirstProperty)
+
+// Inheritance
+// syntax class Subclass : Superclass
+
+class SuperClass {
+    func SuperClassFunction(){
+        print ("Text from super class function")
+    }
+}
+
+class SubClass : SuperClass {
+    
+}
+
+var SubClassInstance = Subclass()
+
+SubClassInstance.SuperClassFunction()
+
+// final class
+// class that are defined as final class cant be inherited
+final class FinalClass {
+    func FinalClassFunction(){
+        print ("Text from final class function")
+    }
+}
+
+class FinalSubClass : FinalClass{ // this will leads to error
+    
+} 
+
+//==================================================================================================
 
 
 
