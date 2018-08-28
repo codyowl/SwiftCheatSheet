@@ -589,6 +589,30 @@ class FinalSubClass : FinalClass{ // this will leads to error
 
 //==================================================================================================
 
+// Extensions
+// Extensions are like letting things to execute in a way like importing a methods from a library
+// keytwords : extension
+// syntax : extension <extension name> {
+// definitions    
+// }
+
+extension Int {
+    func squared() -> Int{
+        return self * self
+    }
+}
+
+// now we can use this straight away inside out code
+
+var MyExtensionVariable = 8
+
+MyExtensionVariable.squared() // this is the purpose of extension
+
+//==================================================================================================
+
+
+
+
 
 
 
