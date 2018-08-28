@@ -395,3 +395,143 @@ my_function_with_trailing_closure_syntax {
 }
 
 //======================================================================================================
+
+// strucutres or structs is for creating own types
+
+// syntax : struct <structurename> {
+//    definitions
+// }
+
+struct Recipes {
+    var cusine_name : String // this variable is called property aka stored property
+}
+
+var first_cusine = Recipes(cusine_name:"Italian") // calling it
+
+print ("The entered value which is of type recipes is \(first_cusine.cusine_name)")
+
+// computed property
+// If a property depends on other things for its value then its called computed property
+
+struct BloodGroup {
+    var name : String
+
+    var BloodgroupStatus : String {
+        if name == "O+ve" { // here bloog group is depends on name for its value
+            return ("Blood group \(name) is suitable for all")
+        }
+        else{
+            return ("No the group \(name) is not suitable for all")
+        }
+    }
+}
+
+// property observers
+// property observers are used to execute things before or after a change in the property
+// keyword : didSet 
+struct FlightReachingTime {
+    var FlightName : String
+    var ArrivalTime : Int{
+        didSet{
+            print ("Flight \(FlightName) arriaval timing is \(ArrivalTime)")
+        }
+    }
+}
+
+var flight = FlightReachingTime(FlightName: "m416")
+
+flight.ArrivalTime = 2 
+flight.ArrivalTime = 5 // everytime when the property get changed our property observer will print the things defined in "didSet"
+
+// Functions inside structs
+
+struct StudentName {
+    name : String
+    func StudentNameReturner() -> String {
+        return name
+    }
+}
+
+let student = StudentName(name: "Ethen Hunt")
+
+student.StudentNameReturner()
+
+// Mutating functions with structures
+// Mutating function allows us to change the property inside a structure
+
+struct MutatingStruct{
+    var name : String
+
+    mutating func NameChangerFunction(){
+        name = "changed name"
+    }
+}
+
+var StructureInstance = MutatingStruct(name: "something") 
+
+StructureInstance.NameChangerFunction()  // withour mutating we can't change this
+
+// Initializers
+// Initializers are used to give default values to a property in a struct
+// keywords : init()
+
+struct MyStructWithInitializers{
+    var name : String
+
+    init() {
+        name = "Default name"
+    }
+}
+
+// calling the struct
+
+var MyStructInstance = MyStructWithInitializers()
+print (MyStructInstance.name) // will print the default value enclose inside init
+
+// now to change the init value
+var MyStructInstance2 = MyStructWithInitializers()
+MyStructInstance2.name = "Changed value"   // chaning the default value
+print (MyStructInstance2.name)
+
+// self
+// self is used to distinguish between property and parameter of init if both of em are supposed to be same
+
+struct User {
+    var name : String
+
+    init(name: String){
+        print ("The initial name is \(name)")
+        self.name = name
+    }
+}
+
+
+// lazy property
+// lazy property is used to call a function whever its needed instead of loading it already/
+
+struct FirstStruct {
+    init() {
+        print ("text form first structures init")
+    }
+}
+
+struct SecondStruct {
+    var name : String
+    lazy var firststruct : FirstStruct()
+    init(name: String){
+        print ("Name is \(name)")
+        self.name = name
+    }
+}
+
+var lazyStructInstance = SecondStruct(name:"random name")
+
+lazyStructInstance.firststruct // since we have added lazy to this property it will call only when its needed instead of loading already
+
+//====================================================================================================
+
+
+
+
+
+
